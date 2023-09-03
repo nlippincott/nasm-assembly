@@ -7,7 +7,7 @@ section .text           ; start of code segment
 _start:
 
     ; Write "Hello World!" to the console
-    mov rdx,1               ; system call for write 
+    mov rax,1               ; system call for write 
     mov rdi,1               ; file handle for stdout
     mov rsi,hello_str       ; address of output string
     mov rdx,hello_str_len   ; size of output string 
