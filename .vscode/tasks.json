@@ -15,6 +15,21 @@
                 "isDefault": true,
                 "kind": "build"
             }
+        },
+        {
+            "type": "shell",
+            "label": "nasmc: Assemble/link active file w/ C library",
+            "command": "nasm -felf64 -g -Fdwarf -o ${fileBasenameNoExtension}.o ${fileBasename}; gcc -g -no-pie ${fileBasenameNoExtension}.o",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": {
+                "pattern": { "regexp": "error" }
+            },
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            }
         }
     ]
 }
