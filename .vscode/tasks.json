@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "nasm: Assemble/link active file",
-            "command": "nasm -felf64 -g -Fdwarf -o ${fileBasenameNoExtension}.o ${fileBasename}; ld -g ${fileBasenameNoExtension}.o",
+            "command": "nasm -felf64 -g -Fdwarf -o ${fileBasenameNoExtension}.o ${fileBasename}; ld -g ${fileBasenameNoExtension}.o; rm ${fileBasenameNoExtension}.o",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -19,7 +19,7 @@
         {
             "type": "shell",
             "label": "nasmc: Assemble/link active file w/ C library",
-            "command": "nasm -felf64 -g -Fdwarf -o ${fileBasenameNoExtension}.o ${fileBasename}; gcc -g -no-pie ${fileBasenameNoExtension}.o",
+            "command": "nasm -felf64 -g -Fdwarf -o ${fileBasenameNoExtension}.o ${fileBasename}; gcc -g -no-pie ${fileBasenameNoExtension}.o; rm ${fileBasenameNoExtension}.o",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
